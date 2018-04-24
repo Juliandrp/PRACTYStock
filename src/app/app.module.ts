@@ -1,3 +1,4 @@
+import { VentaService } from './services/venta.service';
 import { UserService } from './services/user.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -14,6 +15,7 @@ import { LoginComponent } from './components/login/login.component';
 import { VentasComponent } from './components/ventas/ventas.component';
 import { EquiposComponent } from './components/equipos/equipos.component';
 import { HomeComponent } from './components/home/home.component';
+
 
 
 @NgModule({
@@ -36,7 +38,8 @@ import { HomeComponent } from './components/home/home.component';
    MzToastModule
   ],
   providers: [
-    UserService
+   UserService,
+   VentaService
   ],
   bootstrap: [AppComponent]
 })

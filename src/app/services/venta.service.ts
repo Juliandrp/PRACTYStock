@@ -2,42 +2,32 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable()
-export class UserService {
+export class VentaService {
   url:string = 'practy-project.herokuapp.com';
+
   constructor(
     private http:HttpClient
   ) { }
-  
-  getToken() {
-    return new Promise((resolve,reject) => {
-      this.http.get(`${this.url}/login`)
-        .subscribe(data => {
-          resolve(data);
-        },err => {
-          reject(err);
-        })
-    })
-  }
 
-  login(token,data) {
+  sold(token,data) {
     return new Promise((resolve,reject) => {
-      this.http.post(`${this.url}/login`,token+data)
-        .subscribe(resp => {
+      this.http.post(`${this.url}/ventas`,token+data)
+        .subscribe( resp => {
           resolve(resp);
         },err => {
           reject(err);
         })
-    })
+    });
   }
 
-  logout(token){
+  getVentas(id) {
     return new Promise((resolve,reject) => {
-      this.http.get(`${this.url}/logout`)
+      this.http.get(`${this.url}/venta/${id}`)
         .subscribe( data => {
           resolve(data);
-        },err => { 
+        },err => {
           reject(err);
         })
-    });
+    })
   }
 }
