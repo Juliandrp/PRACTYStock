@@ -1,28 +1,40 @@
-<div class="navbar-fixed">
+<div class="navbar-fixed white">
     <nav class="white z-depth-1">
-    <div class="nav-wrappergrey ">
-   <div class="row">
+    <div class="nav-wrappergrey">
+   
+
+    <button [id]="'btn-sidenav-demo'" [flat]="'true'" mz-button (click)="sidenav.opened = !sidenav.opened" class='show-on-large button-collapse btn ng-tns-c5-2 btn btn-floating waves-effect waves-red darken-4 buttonnav' style="top:0px;" ><i class='material-icons  black-text'>menu</i></button>   
+ 
+  <ul class="center-align">
+    <img style="margin-top: 3px" class="logoadmin" src="../../../assets/images/Practy logo.png">
+  </ul>
   
-    <div class=" col s4 m5 l5">
-    <button  mz-button (click)="sidenav.opened = !sidenav.opened" class='show-on-large button-collapse transparent z-depth-0 left' style="top:0px;" ><i class='material-icons  black-text'>menu</i></button>   
-    </div>
-  
-    <div class=" col s7 m7 l7">
-    <img class="logoadmin left" src="../../../assets/images/Practy logo.png"> 
-    </div>
-    
-    
-    </div>
     </div>
     </nav>
     </div>
     <div class="white z-depth-0 transparent" >
     <mz-parallax [height]="350">
-            <img  style=" background-size: cover; background-position: center;" src="../../../assets/images/parallax.png">
+            <img style="background-position: center;" src="../../../assets/images/parallaxsmallscreen.png">
      </mz-parallax>
     </div>
-  <mz-sidenav #sidenav [id]="'sidenav-demo'">
-  
+  <mz-sidenav #sidenav [id]="'sidenav-demo'"
+      [collapseButtonId]="'btn-sidenav-demo'">
+      <mz-sidenav-header>
+        <img style="background-position: center;" width="100%" src="../../../assets/images/p logo.png">
+      </mz-sidenav-header>
+      <mz-sidenav-subheader>Menú</mz-sidenav-subheader>
+      <mz-sidenav-link>
+        <a href="#">Inicio</a>
+      </mz-sidenav-link>
+      <mz-sidenav-divider></mz-sidenav-divider>
+      <mz-sidenav-link [active]="true">
+        <a href="#">Ventas</a>
+      </mz-sidenav-link>
+      <mz-sidenav-divider></mz-sidenav-divider>
+      
+      <mz-sidenav-link >
+        <a href="#" class="waves-effect">Cerrar Sesion</a>
+      </mz-sidenav-link>
   </mz-sidenav>
 
 
@@ -36,7 +48,7 @@
   <mz-card-content>
    
     
-        <div class="row" style="margin-top: 30px;">
+        <div class="row" style="margin-top: 30px; ">
   
             <div class="col s12 m6 l6 center">
                 <div class="input-field center  ">
@@ -131,12 +143,14 @@
             
   
     <div class="col s12 m6 l6 center" >
-            <mz-input-container _ngcontent-c5="" class="col s12" _nghost-c7=""><div _ngcontent-c7="" class="input-field">
+            <mz-input-container _ngcontent-c5="" class="col s12" _nghost-c7="">
+              <div _ngcontent-c7="" class="input-field">
                 <i class="material-icons prefix">perm_device_information</i>
-                    <input _ngcontent-c5="" id="autocomplete-input" mz-input="" type="text" class="ng-tns-c5-0 autocomplete"><label for="autocomplete-input" class="">Dispositivo</label>
-                  
-              <ul class="autocomplete-content dropdown-content"></ul></div></mz-input-container>
-    
+                    <input _ngcontent-c5="15846126" id="autocomplete-input" mz-input="" type="text" class="ng-tns-c5-0 autocomplete">
+                    <label for="autocomplete-input" class="">Dispositivo</label>
+              <ul class="autocomplete-content dropdown-content"></ul>
+            </div>
+          </mz-input-container>
     </div>
     
     <div class="col s12 m6 l6 center">
