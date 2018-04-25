@@ -3,7 +3,7 @@
     <div class="nav-wrappergrey">
    
 
-    <button [id]="'btn-sidenav-demo'" [flat]="'true'" mz-button (click)="sidenav.opened = !sidenav.opened" class='show-on-large button-collapse btn ng-tns-c5-2 btn btn-floating waves-effect waves-red darken-4 buttonnav' style="top:0px;" ><i class='material-icons  black-text'>menu</i></button>   
+    <button [flat]="'true'" mz-button (click)="sidenav.opened = !sidenav.opened" class='show-on-large button-collapse btn ng-tns-c5-2 btn btn-floating waves-effect waves-red darken-4 buttonnav' style="top:0px;" ><i class='material-icons  black-text'>menu</i></button>   
  
   <ul class="center-align">
     <img style="margin-top: 3px" class="logoadmin" src="../../../assets/images/Practy logo.png">
@@ -12,24 +12,28 @@
     </div>
     </nav>
     </div>
-    <div class="white z-depth-0 transparent" >
-    <mz-parallax [height]="350">
+    <div class="white z-depth-0 transparent hide-on-med-and-up" >
+    <mz-parallax [height]="320">
             <img style="background-position: center;" src="../../../assets/images/parallaxsmallscreen.png">
      </mz-parallax>
     </div>
-  <mz-sidenav #sidenav [id]="'sidenav-demo'"
-      [collapseButtonId]="'btn-sidenav-demo'">
+    <div class="white z-depth-0 transparent hide-on-small-only" >
+        <mz-parallax [height]="400">
+                <img style="background-position: center;" src="../../../assets/images/parallax.png">
+         </mz-parallax>
+  </div>
+  <mz-sidenav #sidenav [id]="'sidenav-demo'">
       <mz-sidenav-header>
         <img style="background-position: center;" width="100%" src="../../../assets/images/p logo.png">
       </mz-sidenav-header>
       <mz-sidenav-subheader>Menú</mz-sidenav-subheader>
-      <mz-sidenav-link>
-        <a href="#">Inicio</a>
-      </mz-sidenav-link>
-      <mz-sidenav-divider></mz-sidenav-divider>
       <mz-sidenav-link [active]="true">
-        <a href="#">Ventas</a>
-      </mz-sidenav-link>
+          <a routerLink="/vendedor/home">Inicio</a>
+        </mz-sidenav-link>
+        <mz-sidenav-divider></mz-sidenav-divider>
+        <mz-sidenav-link [active]="true">
+          <a routerLink="/vendedor/venta">Ventas</a>
+        </mz-sidenav-link>
       <mz-sidenav-divider></mz-sidenav-divider>
       
       <mz-sidenav-link >
@@ -42,13 +46,13 @@
   <mz-card
   class="white #960D09-text z-depth-1">
   <mz-card-title>
-    <h5 class="center">Ventas</h5>
+    <h4 class="center">Ventas</h4>
   </mz-card-title>
  
   <mz-card-content>
    
     
-        <div class="row" style="margin-top: 30px; ">
+        <div class="row red-text text-darken-4" style="margin-top: 30px; ">
   
             <div class="col s12 m6 l6 center">
                 <div class="input-field center  ">
@@ -101,11 +105,13 @@
             
 
             <div class="col s12 m6 l6 center">
+                
                 <mz-select-container>
+                    <i class="material-icons prefix" style="left:0%;">shopping_cart</i>
                     <select mz-select
                       id="options-select"
                       [label]="'Departamento'"
-                      [placeholder]="'Seleccione una opcion'"
+                      [placeholder]="' '"
                       class="formcomponents"
                     >
                       <optgroup label="Departamentos">
@@ -114,6 +120,7 @@
                         <option >Antioquia</option>
                         <option >Cundinamarca</option>
                         <option >Cesar</option>
+                        
                       </optgroup>
                     </select>
                     
@@ -122,10 +129,11 @@
 
             <div class="col s12 m6 l6 center">
                 <mz-select-container>
+                    <i class="material-icons prefix" style="left:0%;">shopping_cart</i>
                     <select mz-select
                       id="options-select"
                       [label]="'Ciudad'"
-                      [placeholder]="'Seleccione una opcion'"
+                      [placeholder]="' '"
                       class="formcomponents"
                     >
                       <optgroup label="Ciudades">
@@ -155,10 +163,11 @@
     
     <div class="col s12 m6 l6 center">
             <mz-select-container>
+              <i class="material-icons prefix" style="left:0%;">shopping_cart</i>
                 <select mz-select
                   id="options-select"
                   [label]="'Lista de IMEI'"
-                  [placeholder]="'Seleccione una opcion'"
+                  [placeholder]="' '"
                   class="formcomponents"
                 >
                   <optgroup label="iMEI">
@@ -177,7 +186,7 @@
 
   </mz-card-content>
   <mz-card-action >
-    <button class="btn waves-effect waves-light btn-large red darken-2" style="display: block; margin: auto;" type="submit" name="action">Registrar venta
+    <button class="btn waves-effect waves-light btn-large red darken-4 " style="display: block; margin: auto; border-radius: 5px" type="submit" name="action">Registrar venta
       <i class="material-icons right">send</i>
     </button>
   </mz-card-action>

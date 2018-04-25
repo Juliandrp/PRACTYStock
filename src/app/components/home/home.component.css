@@ -1,0 +1,19 @@
+.containerform{
+    margin-top: 20px;
+}
+
+.logoadmin{
+    width: 120px;
+}
+
+.formcomponents{
+    margin: 20px;
+}
+
+.buttonnav{
+    position: fixed; 
+    top:5%; 
+    left: -2%;
+    width:65px;
+    height: 65px;
+}

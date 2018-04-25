@@ -1,3 +1,94 @@
-<p>
-  home works!
-</p>
+<div class="navbar-fixed white">
+    <nav class="white z-depth-1">
+    <div class="nav-wrappergrey">
+   
+    <button [flat]="'true'" mz-button (click)="sidenav.opened = !sidenav.opened" class='show-on-large button-collapse btn ng-tns-c5-2 btn btn-floating waves-effect waves-red darken-4 buttonnav' style="top:0px;" >
+    <i class='material-icons  black-text'>menu</i>
+    </button>   
+ 
+    <ul class="center-align">
+    <img style="margin-top: 3px" class="logoadmin" src="../../../assets/images/Practy logo.png">
+    </ul>
+  
+    </div>
+    </nav>
+</div>
+
+<div class="white z-depth-0 transparent hide-on-med-and-up" >
+      <mz-parallax [height]="320">
+      <img style="background-position: center;" src="../../../assets/images/parallaxsmallscreen.png">
+      </mz-parallax>
+      </div>
+      <div class="white z-depth-0 transparent hide-on-small-only" >
+      <mz-parallax [height]="400">
+      <img style="background-position: center;" src="../../../assets/images/parallax.png">
+      </mz-parallax>
+</div>
+
+<mz-sidenav #sidenav [id]="'sidenav-demo'"  >
+      <mz-sidenav-header>
+        <img style="background-position: center;" width="100%" src="../../../assets/images/p logo.png">
+      </mz-sidenav-header>
+      <mz-sidenav-subheader>Menú</mz-sidenav-subheader>
+      <mz-sidenav-link [active]="true">
+        <a routerLink="/vendedor/home">Inicio</a>
+      </mz-sidenav-link>
+      <mz-sidenav-divider></mz-sidenav-divider>
+      <mz-sidenav-link [active]="true">
+        <a routerLink="/vendedor/venta">Ventas</a>
+      </mz-sidenav-link>
+      <mz-sidenav-divider></mz-sidenav-divider>
+      
+      <mz-sidenav-link >
+        <a href="#" class="waves-effect">Cerrar Sesion</a>
+      </mz-sidenav-link>
+</mz-sidenav>
+
+
+<div class="container containerform">
+<div class="row" style="margin-top: 30px; ">
+  
+  <div class="col s12 m6 l6 center">
+  <mz-card class="transparent z-depth-1" [hoverable]="true">
+
+  <mz-card-title>
+    <h5 class="center red-text text-darken-4">PractyStock</h5>
+  </mz-card-title>
+
+  <mz-card-content>
+   
+              <span class="flow-text grey-text text-darken-1">Bienvenido a PractyStock, un aplicativo
+                desarrollado para el control de inventario de la empresa.
+              </span>
+
+  </mz-card-content>
+
+  <mz-card-action >
+  </mz-card-action>
+
+  </mz-card>
+  </div>
+
+  <div class="col s12 m6 l6 center">
+      <mz-card class="transparent z-depth-1" [hoverable]="true">
+    
+      <mz-card-title>
+        <h5 class="center red-text text-darken-4">Practico</h5>
+      </mz-card-title>
+    
+      <mz-card-content>
+       
+                  <span class="flow-text grey-text text-darken-1">
+                    Aplicativo fácil de usar, intuitivo y pensado principalmente para la productividad de la empresa.  
+                  </span>
+    
+      </mz-card-content>
+    
+      <mz-card-action >
+      </mz-card-action>
+    
+      </mz-card>
+      </div>
+
+</div>
+</div>
