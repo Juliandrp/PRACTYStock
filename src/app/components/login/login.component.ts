@@ -3,6 +3,8 @@ import { Component, OnInit, Input  } from '@angular/core';
 import { MzToastService } from 'ng2-materialize';
 import { LoginService } from '../../services/login.service';
 import { NgModel } from '@angular/forms';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
@@ -19,16 +21,11 @@ export class LoginComponent implements OnInit {
   };
   constructor(
     private toast:MzToastService,
-    private log:LoginService
+    private log:LoginService,
+    private router:Router
   ) { }
 
   ngOnInit() {
-    this.log.tokenizer()/*
-    .then(data => {
-      this._token = <string>data.error.text;
-    })*/.catch(err =>{
-      this._token = <string>err.error.text;
-    })
   }
 
   print():void {
@@ -43,13 +40,16 @@ export class LoginComponent implements OnInit {
   }
 
   login():void {
-    this.log.login(this.getToken(),this.user)
+    this.log.login(`login=${this.user.login}&password=${this.user.password}`)
       .then(data => {
-        console.log(<string>data)
+        if(data === 'credenciales correctas'){
+          this.router.navigateByUrl('/vendedor/home');
+        }
         this.toast.show(<string>data,4000,'black');
+        this.toast.show(data.login,4000,'black');
       }).catch(err => {
-        console.log(<string>err);
-        this.toast.show(<string>err.error.message, 4000, 'black');
+        console.log(<string>err.login);
+        this.toast.show(<string>err.error, 4000, 'black');
       });
   }
   
