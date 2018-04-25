@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
           this.router.navigateByUrl('/vendedor/home');
         }
         this.toast.show(<string>data,4000,'black');
-        this.toast.show(data.login,4000,'black');
+        //this.toast.show(<string>data.login,4000,'black');
       }).catch(err => {
         console.log(<string>err.login);
         this.toast.show(<string>err.error, 4000, 'black');
