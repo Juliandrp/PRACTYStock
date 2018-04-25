@@ -1,8 +1,7 @@
-import { VentaService } from './services/venta.service';
-import { UserService } from './services/user.service';
+import { VentasService } from './services/ventas.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MzSelectModule } from 'ng2-materialize';
+import { MzSelectModule, MzToastService } from 'ng2-materialize';
 import { MzButtonModule, MzInputModule } from 'ng2-materialize';
 import { MzCardModule } from 'ng2-materialize'
 import { MzSidenavModule } from 'ng2-materialize';
@@ -15,6 +14,7 @@ import { LoginComponent } from './components/login/login.component';
 import { VentasComponent } from './components/ventas/ventas.component';
 import { EquiposComponent } from './components/equipos/equipos.component';
 import { HomeComponent } from './components/home/home.component';
+import { HttpClientModule,HttpClient } from '@angular/common/http';
 
 
 
@@ -35,11 +35,13 @@ import { HomeComponent } from './components/home/home.component';
    MzInputModule,
    MzSelectModule,
    MzCardModule,
-   MzToastModule
+   MzToastModule,
+   HttpClientModule
   ],
   providers: [
-   UserService,
-   VentaService
+    HttpClient,
+    MzToastService,
+    VentasService
   ],
   bootstrap: [AppComponent]
 })

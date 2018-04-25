@@ -2,18 +2,18 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable()
-export class UserService {
-  url:string = 'practy-project.herokuapp.com';
+export class LoginService {
+  url:string = 'https://practy-project.herokuapp';
   constructor(
     private http:HttpClient
   ) { }
-  
-  getToken() {
+
+  tokenizer():Promise<any> {
     return new Promise((resolve,reject) => {
       this.http.get(`${this.url}/login`)
         .subscribe(data => {
           resolve(data);
-        },err => {
+        }, err => {
           reject(err);
         })
     })
@@ -22,22 +22,11 @@ export class UserService {
   login(token,data) {
     return new Promise((resolve,reject) => {
       this.http.post(`${this.url}/login`,token+data)
-        .subscribe(resp => {
-          resolve(resp);
-        },err => {
-          reject(err);
-        })
+      .subscribe(resp => {
+        resolve(resp);
+      },err => {
+        reject(err);
+      })
     })
-  }
-
-  logout(token){
-    return new Promise((resolve,reject) => {
-      this.http.get(`${this.url}/logout`)
-        .subscribe( data => {
-          resolve(data);
-        },err => { 
-          reject(err);
-        })
-    });
   }
 }
