@@ -1,9 +1,9 @@
 export interface Usuario {
-    id:number;
+    id?:number;
     cedula:number;
-    nombrecompleto:string;
-    email:string;
+    nombrecompleto?:string;
+    email?:string;
     password:string;
-    rol:string;
+    rol?:string;
     bodega?:string;
 }

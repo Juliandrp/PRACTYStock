@@ -8,6 +8,7 @@ import { MzSidenavModule } from 'ng2-materialize';
 import { MzParallaxModule } from 'ng2-materialize'
 import { MzToastModule } from 'ng2-materialize';
 import { AppRoutingModule }     from './app-routing.module';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -15,6 +16,7 @@ import { VentasComponent } from './components/ventas/ventas.component';
 import { EquiposComponent } from './components/equipos/equipos.component';
 import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule,HttpClient } from '@angular/common/http';
+import { LoginService } from './services/login.service';
 
 
 
@@ -36,12 +38,14 @@ import { HttpClientModule,HttpClient } from '@angular/common/http';
    MzSelectModule,
    MzCardModule,
    MzToastModule,
-   HttpClientModule
+   HttpClientModule,
+   FormsModule
   ],
   providers: [
     HttpClient,
     MzToastService,
-    VentasService
+    VentasService,
+    LoginService
   ],
   bootstrap: [AppComponent]
 })

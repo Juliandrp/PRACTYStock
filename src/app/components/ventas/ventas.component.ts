@@ -17,19 +17,13 @@ export class VentasComponent implements OnInit {
   constructor(
     private service:VentasService,
     private _toast:MzToastService,
+    private log:LoginComponent
   ) { 
 
   }
 
   ngOnInit() {
-    this.service.tokenizer().then(token => {
-      this._token = token;
-      console.log(this._token);
-    }).catch( err => {
-      this._token = <string>err.error.text;
-      //console.error(this._token);
-      //this._toast.show(this._token,4000,'black');
-    });
+    this._token = this.log.getToken();
   }
 
   postVentas():void {

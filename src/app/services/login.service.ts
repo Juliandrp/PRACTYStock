@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class LoginService {
-  url:string = 'https://practy-project.herokuapp';
+  url:string = 'https://practy-project.herokuapp.com';
   constructor(
     private http:HttpClient
   ) { }
@@ -20,8 +20,20 @@ export class LoginService {
   }
 
   login(token,data) {
+    const head = {
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      }
+    };
+
     return new Promise((resolve,reject) => {
-      this.http.post(`${this.url}/login`,token+data)
+      const obj = {
+        _token: token,
+        login: data.login,
+        password: data.password
+      };
+      this.http.post(`${this.url}/login`,obj,head)
       .subscribe(resp => {
         resolve(resp);
       },err => {
