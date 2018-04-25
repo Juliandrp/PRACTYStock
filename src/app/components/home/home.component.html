@@ -25,24 +25,25 @@
       </mz-parallax>
 </div>
 
-<mz-sidenav #sidenav [id]="'sidenav-demo'"  >
-      <mz-sidenav-header>
-        <img style="background-position: center;" width="100%" src="../../../assets/images/p logo.png">
-      </mz-sidenav-header>
-      <mz-sidenav-subheader>Menú</mz-sidenav-subheader>
-      <mz-sidenav-link [active]="true">
+<mz-sidenav #sidenav [id]="'sidenav-demo'">
+    <mz-sidenav-header>
+      <img style="background-position: center;" width="100%" src="../../../assets/images/p logo.png">
+    </mz-sidenav-header>
+    <mz-sidenav-subheader>Menú</mz-sidenav-subheader>
+    <mz-sidenav-link>
         <a routerLink="/vendedor/home">Inicio</a>
       </mz-sidenav-link>
       <mz-sidenav-divider></mz-sidenav-divider>
-      <mz-sidenav-link [active]="true">
+      <mz-sidenav-link>
         <a routerLink="/vendedor/venta">Ventas</a>
       </mz-sidenav-link>
-      <mz-sidenav-divider></mz-sidenav-divider>
-      
-      <mz-sidenav-link >
-        <a href="#" class="waves-effect">Cerrar Sesion</a>
-      </mz-sidenav-link>
+    <mz-sidenav-divider></mz-sidenav-divider>
+    
+    <mz-sidenav-link >
+      <a href="#" class="waves-effect">Cerrar Sesion</a>
+    </mz-sidenav-link>
 </mz-sidenav>
+
 
 
 <div class="container containerform">
