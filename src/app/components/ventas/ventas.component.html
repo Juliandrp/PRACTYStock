@@ -23,23 +23,24 @@
          </mz-parallax>
   </div>
   <mz-sidenav #sidenav [id]="'sidenav-demo'">
-      <mz-sidenav-header>
-        <img style="background-position: center;" width="100%" src="../../../assets/images/p logo.png">
-      </mz-sidenav-header>
-      <mz-sidenav-subheader>Menú</mz-sidenav-subheader>
-      <mz-sidenav-link [active]="true">
-          <a routerLink="/vendedor/home">Inicio</a>
-        </mz-sidenav-link>
-        <mz-sidenav-divider></mz-sidenav-divider>
-        <mz-sidenav-link [active]="true">
-          <a routerLink="/vendedor/venta">Ventas</a>
-        </mz-sidenav-link>
-      <mz-sidenav-divider></mz-sidenav-divider>
-      
-      <mz-sidenav-link >
-        <a href="#" class="waves-effect">Cerrar Sesion</a>
+    <mz-sidenav-header>
+      <img style="background-position: center;" width="100%" src="../../../assets/images/p logo.png">
+    </mz-sidenav-header>
+    <mz-sidenav-subheader>Menú</mz-sidenav-subheader>
+    <mz-sidenav-link>
+        <button class="waves-effect waves-red btn-flat" style="width: 100%;" routerLink="/vendedor/home"><i class="material-icons left">home</i> <a class="left  grey-text text-darken-4">Inicio</a> </button>
       </mz-sidenav-link>
-  </mz-sidenav>
+      <mz-sidenav-divider></mz-sidenav-divider>
+      <mz-sidenav-link>
+        <button class="waves-effect waves-red btn-flat" style="width: 100%;" routerLink="/vendedor/venta"><i class="material-icons left">shop</i> <a class="left grey-text text-darken-4">Ventas</a></button>
+      </mz-sidenav-link>
+    <mz-sidenav-divider></mz-sidenav-divider>
+    
+    <mz-sidenav-link >
+        <button class="waves-effect waves-red btn-flat" style="width: 100%;" routerLink="/"><i class="material-icons left">close</i><a class="left grey-text text-darken-4">Cerrar Sesion</a></button>
+ 
+    </mz-sidenav-link>
+</mz-sidenav>
 
 
   <div class="container containerform">

@@ -31,16 +31,17 @@
     </mz-sidenav-header>
     <mz-sidenav-subheader>Menú</mz-sidenav-subheader>
     <mz-sidenav-link>
-        <a routerLink="/vendedor/home">Inicio</a>
+        <button class="waves-effect waves-red btn-flat" style="width: 100%;" routerLink="/vendedor/home"><i class="material-icons left">home</i> <a class="left  grey-text text-darken-4">Inicio</a> </button>
       </mz-sidenav-link>
       <mz-sidenav-divider></mz-sidenav-divider>
       <mz-sidenav-link>
-        <a routerLink="/vendedor/venta">Ventas</a>
+        <button class="waves-effect waves-red btn-flat" style="width: 100%;" routerLink="/vendedor/venta"><i class="material-icons left">shop</i> <a class="left grey-text text-darken-4">Ventas</a></button>
       </mz-sidenav-link>
     <mz-sidenav-divider></mz-sidenav-divider>
     
     <mz-sidenav-link >
-      <a href="#" class="waves-effect">Cerrar Sesion</a>
+        <button class="waves-effect waves-red btn-flat" style="width: 100%;" routerLink="/"><i class="material-icons left">close</i><a class="left grey-text text-darken-4">Cerrar Sesion</a></button>
+ 
     </mz-sidenav-link>
 </mz-sidenav>
 
@@ -51,29 +52,55 @@
   
   <div class="col s12 m6 l6 center">
 
+        <mz-collapsible
+
+
+        [onClose]="closeFunctionCallback"
+        [onOpen]="openFunctionCallback"
+        style="display: block; background-color: white;">
+        <mz-collapsible-item [active]="true">
+          <mz-collapsible-item-header>
+          <span class="card-title"><h5 class="center red-text text-darken-4">PractyStock</h5></span>
+          </mz-collapsible-item-header>
+          <mz-collapsible-item-body style="display: block; background-color: white;  height: 150px;" >
+         
+                          <span class="flow-text grey-text text-darken-1">Bienvenido a PractyStock, un aplicativo
+                              desarrollado para el control de inventario de la empresa.
+                          </span>
+                       
+          </mz-collapsible-item-body>
+        </mz-collapsible-item>
+      
+      </mz-collapsible>
+
      
-            <div class="card hoverable small">
-              <div class="card-content white-text" >
-                <span class="card-title"><h5 class="center red-text text-darken-4">PractyStock</h5></span>
-                <span class="flow-text grey-text text-darken-1">Bienvenido a PractyStock, un aplicativo
-                    desarrollado para el control de inventario de la empresa.
-                  </span>
-              </div>
-            </div>
+            
           
 
   </div>
 
   <div class="col s12 m6 l6 center">
 
-      <div class="card hoverable small">
-          <div class="card-content white-text " >
-            <span class="card-title"><h5 class="center red-text text-darken-4">Practico</h5></span>
-            <span class="flow-text grey-text text-darken-1">
-                Aplicativo fácil de usar, intuitivo y pensado principalmente para la productividad de la empresa.
-              </span>
-          </div>
-        </div>
+        <mz-collapsible
+
+        [onClose]="closeFunctionCallback"
+        [onOpen]="openFunctionCallback"
+        style="display: block; background-color: white;">
+        <mz-collapsible-item [active]="true">
+          <mz-collapsible-item-header>
+          <span class="card-title"><h5 class="center red-text text-darken-4">Practico</h5></span>
+          </mz-collapsible-item-header>
+          <mz-collapsible-item-body style="display: block; background-color: white;  height: 150px;" >
+         
+                          <span class="flow-text grey-text text-darken-1">
+                                Aplicativo fácil de usar, intuitivo y pensado principalmente para la productividad de la empresa.
+                          </span>
+                       
+          </mz-collapsible-item-body>
+        </mz-collapsible-item>
+      
+      </mz-collapsible>
+
 
       </div>
 
@@ -99,27 +126,52 @@
       
       <div class="col s12 m6 l6 center">
 
-          <div class="card hoverable small">
-              <div class="card-content white-text" >
-                <span class="card-title"><h5 class="center red-text text-darken-4">Versátil</h5></span>
-                <span class="flow-text grey-text text-darken-1">
-                    Nuestro aplicativo se acomoda a tus necesidades, no necesitas características especiales para utilizarlo.
-                  </span>
-              </div>
-          </div>
+            <mz-collapsible
 
+
+            [onClose]="closeFunctionCallback"
+            [onOpen]="openFunctionCallback"
+            style="display: block; background-color: white;">
+            <mz-collapsible-item [active]="true">
+              <mz-collapsible-item-header>
+              <span class="card-title"><h5 class="center red-text text-darken-4">Versátil</h5></span>
+              </mz-collapsible-item-header>
+              <mz-collapsible-item-body style="display: block; background-color: white; height: 150px;" >
+             
+                              <span class="flow-text grey-text text-darken-1">
+                                    Nuestro aplicativo se acomoda a tus necesidades, no necesitas características especiales para utilizarlo.
+                              </span>
+                           
+              </mz-collapsible-item-body>
+            </mz-collapsible-item>
+          
+          </mz-collapsible>
+
+     
       </div>
     
       <div class="col s12 m6 l6 center">
 
-          <div class="card hoverable small">
-              <div class="card-content white-text" >
-                <span class="card-title"><h5 class="center red-text text-darken-4">Responsive</h5></span>
-                <span class="flow-text grey-text text-darken-1">
-                    Nuestro aplicativo se ajusta al tamaño de la pantalla de tu dispositivo, puedes usarlo sin problema en un móvil o un dispositivo de escritorio.
-                  </span>
-              </div>
-          </div>
+            <mz-collapsible
+
+
+            [onClose]="closeFunctionCallback"
+            [onOpen]="openFunctionCallback"
+            style="display: block; background-color: white; ">
+            <mz-collapsible-item [active]="true">
+              <mz-collapsible-item-header>
+              <span class="card-title"><h5 class="center red-text text-darken-4">Responsive</h5></span>
+              </mz-collapsible-item-header>
+              <mz-collapsible-item-body style="display: block; background-color: white;  height: 150px;" >
+             
+                              <span class="flow-text grey-text text-darken-1">
+                                    Nuestro aplicativo se ajusta al tamaño de la pantalla de tu dispositivo, puedes usarlo sin problema en un móvil o un dispositivo de escritorio.
+                              </span>
+                           
+              </mz-collapsible-item-body>
+            </mz-collapsible-item>
+          
+          </mz-collapsible>
 
           </div>
     

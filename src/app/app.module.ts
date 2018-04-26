@@ -9,6 +9,7 @@ import { MzSidenavModule } from 'ng2-materialize';
 import { MzParallaxModule } from 'ng2-materialize'
 import { MzToastModule } from 'ng2-materialize';
 import { MzCollapsibleModule } from 'ng2-materialize'
+import { MzSpinnerModule } from 'ng2-materialize'
 import { AppRoutingModule }     from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 
@@ -19,6 +20,7 @@ import { EquiposComponent } from './components/equipos/equipos.component';
 import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule,HttpClient } from '@angular/common/http';
 import { LoginService } from './services/login.service';
+import { IniciandoComponent } from './components/iniciando/iniciando.component';
 
 
 
@@ -28,7 +30,8 @@ import { LoginService } from './services/login.service';
     LoginComponent,
     VentasComponent,
     EquiposComponent,
-    HomeComponent
+    HomeComponent,
+    IniciandoComponent
   ],
   imports: [
     BrowserModule,
@@ -41,6 +44,7 @@ import { LoginService } from './services/login.service';
    MzCardModule,
    MzToastModule,
    MzCollapsibleModule,
+   MzSpinnerModule,
    HttpClientModule,
    FormsModule
   ],
