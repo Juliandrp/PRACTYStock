@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
           this.toast.show(<string>data,4000,'black');
         }
           console.log(data);
-          this.toast.show(<string>data.login,4000,'black');
+          this.toast.show(<string>data,4000,'black');
         
       }).catch(err => {
         console.log(<string>err);
