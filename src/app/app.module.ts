@@ -1,3 +1,4 @@
+import { LocationService } from './services/location.service';
 import { VentasService } from './services/ventas.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -47,7 +48,8 @@ import { LoginService } from './services/login.service';
     HttpClient,
     MzToastService,
     VentasService,
-    LoginService
+    LoginService,
+    LocationService
   ],
   bootstrap: [AppComponent]
 })
