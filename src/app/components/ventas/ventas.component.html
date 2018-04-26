@@ -52,9 +52,9 @@
   <mz-card-content>
    
     
-        <div class="row red-text text-darken-4" style="margin-top: 30px; ">
+  <div class="row red-text text-darken-4" style="margin-top: 30px; ">
   
-            <div class="col s12 m6 l6 center">
+            <div class="col s12 m6 l6 ">
                 <div class="input-field center  ">
                     <i class="material-icons prefix">shopping_cart</i>
                     <input id="icon_prefix" type="text" class="validate">
@@ -62,6 +62,7 @@
                   </div>
             </div>
 
+<<<<<<< HEAD
             <div class="col s12 m6 l6 center">
                 <div class="input-field center ">
                     <i class="material-icons prefix">perm_identity</i>
@@ -101,8 +102,92 @@
                     <label for="icon_prefix">Barrio</label>
                   </div>
             </div>
+=======
+<div class="col s12 m6 l6">
+<mz-collapsible
 
-            
+  [onClose]="closeFunctionCallback"
+  [onOpen]="openFunctionCallback">
+  <mz-collapsible-item [active]="false">
+    <mz-collapsible-item-header>
+    Cliente Registrado?
+    </mz-collapsible-item-header>
+    <mz-collapsible-item-body>
+
+       
+              <div class="row">
+                <div class="input-field col s12">
+                  <i class="material-icons prefix">account_circle</i>
+                  <input type="text" id="autocomplete-input" class="autocomplete">
+                  <label for="autocomplete-input">Buscar Cliente</label>
+                </div>
+              </div>
+          
+    </mz-collapsible-item-body>
+  </mz-collapsible-item>
+
+</mz-collapsible>
+</div>     
+
+<div class="col s12 m6 l6">
+    <mz-collapsible
+      [mode]="'expandable'"
+      [onClose]="closeFunctionCallback"
+      [onOpen]="openFunctionCallback">
+>>>>>>> 3c147d252e259f9f4fb2d729458bfc825428e698
+
+    
+      <mz-collapsible-item [active]="false">
+          <mz-collapsible-item-header>
+          Cliente no registrado?
+          </mz-collapsible-item-header>
+          <mz-collapsible-item-body>
+           <div class="row">
+              <div class="col s12 m6 l6 center">
+                  <div class="input-field center ">
+                      <i class="material-icons prefix">perm_identity</i>
+                      <input id="icon_prefix" type="text" class="validate">
+                      <label for="icon_prefix">Cedula</label>
+                    </div>
+              </div>
+    
+              <div class="col s12 m6 l6 center">
+                  <div class="input-field center ">
+                      <i class="material-icons prefix">person</i>
+                      <input id="icon_prefix" type="text" class="validate">
+                      <label for="icon_prefix">Nombre completo</label>
+                    </div>
+              </div>
+    
+              <div class="col s12 m6 l6 center">
+                  <div class="input-field center ">
+                      <i class="material-icons prefix">phone</i>
+                      <input id="icon_prefix" type="text" class="validate">
+                      <label for="icon_prefix">Telefono</label>
+                    </div>
+              </div>
+    
+              <div class="col s12 m6 l6 center">
+                  <div class="input-field center ">
+                      <i class="material-icons prefix">add_location</i>
+                      <input id="icon_prefix" type="text" class="validate">
+                      <label for="icon_prefix">Direccion</label>
+                    </div>
+              </div>
+    
+              <div class="col s12 m6 l6 center">
+                  <div class="input-field center ">
+                      <i class="material-icons prefix">location_city</i>
+                      <input id="icon_prefix" type="text" class="validate">
+                      <label for="icon_prefix">Barrio</label>
+                    </div>
+              </div>
+            </div>
+          </mz-collapsible-item-body>
+        </mz-collapsible-item>
+    </mz-collapsible>
+    </div> 
+                
 
             <div class="col s12 m6 l6 center">
                 
@@ -112,16 +197,15 @@
                       id="options-select"
                       [label]="'Departamento'"
                       [placeholder]="' '"
+<<<<<<< HEAD
                       class="formcomponents"
                       [(ngModel)]="venta.departameto"  name="departamento" 
                     >
+=======
+                      class="formcomponents"   >
+>>>>>>> 3c147d252e259f9f4fb2d729458bfc825428e698
                       <optgroup label="Departamentos">
-                        <option >Valle</option>
-                        <option >Córdoba</option>
-                        <option >Antioquia</option>
-                        <option >Cundinamarca</option>
-                        <option >Cesar</option>
-                        
+                        <option ></option>
                       </optgroup>
                     </select>
                     
@@ -139,30 +223,47 @@
                       [(ngModel)]="venta.ciudad"  name="ciudad" 
                     >
                       <optgroup label="Ciudades">
-                        <option >Cali</option>
-                        <option >Medellin</option>
-                        <option >Bogotá</option>
-                        <option >Barranquilla</option>
-                        <option >Cartagena</option>
+                        <option ></option>   
                       </optgroup>
-                      >
                     </select>
                   </mz-select-container>
             </div>
 
-            
-  
-    <div class="col s12 m6 l6 center" >
-            <mz-input-container _ngcontent-c5="" class="col s12" _nghost-c7="">
-              <div _ngcontent-c7="" class="input-field">
-                <i class="material-icons prefix">perm_device_information</i>
-                    <input _ngcontent-c5="15846126" id="autocomplete-input" mz-input="" type="text" class="ng-tns-c5-0 autocomplete">
-                    <label for="autocomplete-input" class="">Dispositivo</label>
-              <ul class="autocomplete-content dropdown-content"></ul>
-            </div>
-          </mz-input-container>
-    </div>
     
+    <div class="col s12 m6 l6 center">
+      <mz-select-container>
+        <i class="material-icons prefix" style="left:0%;">perm_device_information</i>
+          <select mz-select
+            id="options-select"
+            [label]="'Marca'"
+            [placeholder]="' '"
+            class="formcomponents"
+          >
+            <optgroup label="Marcas">
+              <option ></option>
+              
+            </optgroup>
+          </select>
+        </mz-select-container>
+</div>
+
+<div class="col s12 m6 l6 center">
+  <mz-select-container>
+    <i class="material-icons prefix" style="left:0%;">perm_device_information</i>
+      <select mz-select
+        id="options-select"
+        [label]="'Modelo'"
+        [placeholder]="' '"
+        class="formcomponents"
+      >
+        <optgroup label="Modelos">
+          <option ></option>
+     
+        </optgroup>
+      </select>
+    </mz-select-container>
+</div>
+
     <div class="col s12 m6 l6 center">
             <mz-select-container>
               <i class="material-icons prefix" style="left:0%;">shopping_cart</i>
@@ -174,16 +275,12 @@
                   [(ngModel)]="venta.imei"  name="imei" 
                 >
                   <optgroup label="iMEI">
-                    <option >123456789123456</option>
-                    <option >123456765823456</option>   
+                    <option ></option>  
                   </optgroup>
                 </select>
               </mz-select-container>
-        </div>
-    
-    
-    
-    
+    </div>
+     
     </div>
       
 
