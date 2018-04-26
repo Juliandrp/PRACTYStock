@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./ventas.component.css'],
 })
 export class VentasComponent implements OnInit {
-  vendedor;
+  id_vendedor;
   venta:any = {
     numFactura: '',
     cedula: '',
@@ -40,7 +40,7 @@ export class VentasComponent implements OnInit {
     &nomCompleto=${this.venta.nomCompleto}&telefono=${this.venta.telefono}
     &direccion=${this.venta.direccion}&barrio=${this.venta.barrio}
     &departamento=${this.venta.departamento}&ciudad=${this.venta.ciudad}
-    &imei=${this.venta.imei}&id_user=${vendedor.id}
+    &imei=${this.venta.imei}&id_user=${this.id_vendedor}
     `).
       then(data => {
         this._toast.show(<string>data,400,'black');

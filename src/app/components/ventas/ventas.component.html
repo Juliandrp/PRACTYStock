@@ -62,47 +62,6 @@
                   </div>
             </div>
 
-<<<<<<< HEAD
-            <div class="col s12 m6 l6 center">
-                <div class="input-field center ">
-                    <i class="material-icons prefix">perm_identity</i>
-                    <input id="icon_prefix" type="text" class="validate">
-                    <label [(ngModel)]="venta.cedula"  name="cedula" for="icon_prefix">Cedula</label>
-                  </div>
-            </div>
-
-            <div class="col s12 m6 l6 center">
-                <div class="input-field center ">
-                    <i class="material-icons prefix">person</i>
-                    <input [(ngModel)]="venta.nomCompleto"  name="nomCompleto" id="icon_prefix" type="text" class="validate">
-                    <label for="icon_prefix">Nombre completo</label>
-                  </div>
-            </div>
-
-            <div class="col s12 m6 l6 center">
-                <div class="input-field center ">
-                    <i class="material-icons prefix">phone</i>
-                    <input [(ngModel)]="venta.telefono"  name="telefono" id="icon_prefix" type="text" class="validate">
-                    <label for="icon_prefix">Telefono</label>
-                  </div>
-            </div>
-
-            <div class="col s12 m6 l6 center">
-                <div class="input-field center ">
-                    <i class="material-icons prefix">add_location</i>
-                    <input [(ngModel)]="venta.direccion"  name="direccion" id="icon_prefix" type="text" class="validate">
-                    <label for="icon_prefix">Direccion</label>
-                  </div>
-            </div>
-
-            <div class="col s12 m6 l6 center">
-                <div class="input-field center ">
-                    <i class="material-icons prefix">location_city</i>
-                    <input [(ngModel)]="venta.barrio"  name="barrio" id="icon_prefix" type="text" class="validate">
-                    <label for="icon_prefix">Barrio</label>
-                  </div>
-            </div>
-=======
 <div class="col s12 m6 l6">
 <mz-collapsible
 
@@ -118,7 +77,7 @@
               <div class="row">
                 <div class="input-field col s12">
                   <i class="material-icons prefix">account_circle</i>
-                  <input type="text" id="autocomplete-input" class="autocomplete">
+                  <input type="text" id="autocomplete-input" class="autocomplete" [(ngModel)]="venta.cedula">
                   <label for="autocomplete-input">Buscar Cliente</label>
                 </div>
               </div>
@@ -134,7 +93,6 @@
       [mode]="'expandable'"
       [onClose]="closeFunctionCallback"
       [onOpen]="openFunctionCallback">
->>>>>>> 3c147d252e259f9f4fb2d729458bfc825428e698
 
     
       <mz-collapsible-item [active]="false">
@@ -146,7 +104,7 @@
               <div class="col s12 m6 l6 center">
                   <div class="input-field center ">
                       <i class="material-icons prefix">perm_identity</i>
-                      <input id="icon_prefix" type="text" class="validate">
+                      <input id="icon_prefix" type="text" class="validate" [(ngModel)]="venta.cedula">
                       <label for="icon_prefix">Cedula</label>
                     </div>
               </div>
@@ -154,7 +112,7 @@
               <div class="col s12 m6 l6 center">
                   <div class="input-field center ">
                       <i class="material-icons prefix">person</i>
-                      <input id="icon_prefix" type="text" class="validate">
+                      <input id="icon_prefix" type="text" class="validate" [(ngModel)]="venta.nomCompleto">
                       <label for="icon_prefix">Nombre completo</label>
                     </div>
               </div>
@@ -162,7 +120,7 @@
               <div class="col s12 m6 l6 center">
                   <div class="input-field center ">
                       <i class="material-icons prefix">phone</i>
-                      <input id="icon_prefix" type="text" class="validate">
+                      <input id="icon_prefix" type="text" class="validate" [(ngModel)]="venta.telefono">
                       <label for="icon_prefix">Telefono</label>
                     </div>
               </div>
@@ -170,7 +128,7 @@
               <div class="col s12 m6 l6 center">
                   <div class="input-field center ">
                       <i class="material-icons prefix">add_location</i>
-                      <input id="icon_prefix" type="text" class="validate">
+                      <input id="icon_prefix" type="text" class="validate" [(ngModel)]="venta.direccion">
                       <label for="icon_prefix">Direccion</label>
                     </div>
               </div>
@@ -178,7 +136,7 @@
               <div class="col s12 m6 l6 center">
                   <div class="input-field center ">
                       <i class="material-icons prefix">location_city</i>
-                      <input id="icon_prefix" type="text" class="validate">
+                      <input id="icon_prefix" type="text" class="validate" [(ngModel)]="venta.barrio">
                       <label for="icon_prefix">Barrio</label>
                     </div>
               </div>
@@ -197,13 +155,9 @@
                       id="options-select"
                       [label]="'Departamento'"
                       [placeholder]="' '"
-<<<<<<< HEAD
                       class="formcomponents"
-                      [(ngModel)]="venta.departameto"  name="departamento" 
-                    >
-=======
-                      class="formcomponents"   >
->>>>>>> 3c147d252e259f9f4fb2d729458bfc825428e698
+                      [(ngModel)]="venta.departamento"
+                      >
                       <optgroup label="Departamentos">
                         <option ></option>
                       </optgroup>
@@ -238,6 +192,7 @@
             [label]="'Marca'"
             [placeholder]="' '"
             class="formcomponents"
+            [(ngModel)]="venta.marca"
           >
             <optgroup label="Marcas">
               <option ></option>
@@ -255,6 +210,7 @@
         [label]="'Modelo'"
         [placeholder]="' '"
         class="formcomponents"
+        [(ngModel)]="venta.modelo"
       >
         <optgroup label="Modelos">
           <option ></option>

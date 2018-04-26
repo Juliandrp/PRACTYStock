@@ -47,10 +47,10 @@ export class LoginComponent implements OnInit {
   login():void {
     this.log.login(`login=${this.user.login}&password=${this.user.password}`)
       .then(data => {
-        if(data === 'credenciales correctas'){
+        if(data !== 'estas credenciales no coinciden con nuestros registros'){
           this.router.navigateByUrl('/vendedor/home');
           this.idUser = <number>data;
-          this.toast.show(<string>data,4000,'black');
+          //this.toast.show(<string>data,4000,'black');
         }
           console.log(data);
           this.toast.show(<string>data,4000,'black');
