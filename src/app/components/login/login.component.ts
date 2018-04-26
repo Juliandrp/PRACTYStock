@@ -44,12 +44,14 @@ export class LoginComponent implements OnInit {
       .then(data => {
         if(data === 'credenciales correctas'){
           this.router.navigateByUrl('/vendedor/home');
+          this.toast.show(<string>data,4000,'black');
         }
-        this.toast.show(<string>data,4000,'black');
-        //this.toast.show(<string>data.login,4000,'black');
+          console.log(data);
+          this.toast.show(<string>data.login,4000,'black');
+        
       }).catch(err => {
-        console.log(<string>err.login);
-        this.toast.show(<string>err.error, 4000, 'black');
+        console.log(<string>err);
+        this.toast.show(<string>err, 4000, 'black');
       });
   }
   
