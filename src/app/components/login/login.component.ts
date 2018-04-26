@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
     login:'',
     password:'',
   };
+  idUser:number;
   constructor(
     private toast:MzToastService,
     private log:LoginService,
@@ -26,6 +27,10 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+  }
+
+  getId():number {
+    return this.idUser;
   }
 
   print():void {
@@ -44,10 +49,11 @@ export class LoginComponent implements OnInit {
       .then(data => {
         if(data === 'credenciales correctas'){
           this.router.navigateByUrl('/vendedor/home');
+          this.idUser = <number>data;
           this.toast.show(<string>data,4000,'black');
         }
           console.log(data);
-          this.toast.show(<string>data.login,4000,'black');
+          this.toast.show(<string>data,4000,'black');
         
       }).catch(err => {
         console.log(<string>err);

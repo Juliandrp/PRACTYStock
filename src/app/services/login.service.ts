@@ -8,16 +8,6 @@ export class LoginService {
     private http:HttpClient
   ) { }
 
-  tokenizer():Promise<any> {
-    return new Promise((resolve,reject) => {
-      this.http.get(`${this.url}/login`)
-        .subscribe(data => {
-          resolve(data);
-        }, err => {
-          reject(err);
-        })
-    })
-  }
 
   login(data) {
     const head = {

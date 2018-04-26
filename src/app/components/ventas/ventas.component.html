@@ -58,7 +58,7 @@
                 <div class="input-field center  ">
                     <i class="material-icons prefix">shopping_cart</i>
                     <input id="icon_prefix" type="text" class="validate">
-                    <label for="icon_prefix">Numero de factura</label>
+                    <label [(ngModel)]="venta.numFactura"  name="numFactura" for="icon_prefix">Numero de factura</label>
                   </div>
             </div>
 
@@ -66,14 +66,14 @@
                 <div class="input-field center ">
                     <i class="material-icons prefix">perm_identity</i>
                     <input id="icon_prefix" type="text" class="validate">
-                    <label for="icon_prefix">Cedula</label>
+                    <label [(ngModel)]="venta.cedula"  name="cedula" for="icon_prefix">Cedula</label>
                   </div>
             </div>
 
             <div class="col s12 m6 l6 center">
                 <div class="input-field center ">
                     <i class="material-icons prefix">person</i>
-                    <input id="icon_prefix" type="text" class="validate">
+                    <input [(ngModel)]="venta.nomCompleto"  name="nomCompleto" id="icon_prefix" type="text" class="validate">
                     <label for="icon_prefix">Nombre completo</label>
                   </div>
             </div>
@@ -81,7 +81,7 @@
             <div class="col s12 m6 l6 center">
                 <div class="input-field center ">
                     <i class="material-icons prefix">phone</i>
-                    <input id="icon_prefix" type="text" class="validate">
+                    <input [(ngModel)]="venta.telefono"  name="telefono" id="icon_prefix" type="text" class="validate">
                     <label for="icon_prefix">Telefono</label>
                   </div>
             </div>
@@ -89,7 +89,7 @@
             <div class="col s12 m6 l6 center">
                 <div class="input-field center ">
                     <i class="material-icons prefix">add_location</i>
-                    <input id="icon_prefix" type="text" class="validate">
+                    <input [(ngModel)]="venta.direccion"  name="direccion" id="icon_prefix" type="text" class="validate">
                     <label for="icon_prefix">Direccion</label>
                   </div>
             </div>
@@ -97,7 +97,7 @@
             <div class="col s12 m6 l6 center">
                 <div class="input-field center ">
                     <i class="material-icons prefix">location_city</i>
-                    <input id="icon_prefix" type="text" class="validate">
+                    <input [(ngModel)]="venta.barrio"  name="barrio" id="icon_prefix" type="text" class="validate">
                     <label for="icon_prefix">Barrio</label>
                   </div>
             </div>
@@ -113,6 +113,7 @@
                       [label]="'Departamento'"
                       [placeholder]="' '"
                       class="formcomponents"
+                      [(ngModel)]="venta.departameto"  name="departamento" 
                     >
                       <optgroup label="Departamentos">
                         <option >Valle</option>
@@ -135,6 +136,7 @@
                       [label]="'Ciudad'"
                       [placeholder]="' '"
                       class="formcomponents"
+                      [(ngModel)]="venta.ciudad"  name="ciudad" 
                     >
                       <optgroup label="Ciudades">
                         <option >Cali</option>
@@ -169,6 +171,7 @@
                   [label]="'Lista de IMEI'"
                   [placeholder]="' '"
                   class="formcomponents"
+                  [(ngModel)]="venta.imei"  name="imei" 
                 >
                   <optgroup label="iMEI">
                     <option >123456789123456</option>
