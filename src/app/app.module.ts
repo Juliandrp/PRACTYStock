@@ -7,6 +7,7 @@ import { MzCardModule } from 'ng2-materialize'
 import { MzSidenavModule } from 'ng2-materialize';
 import { MzParallaxModule } from 'ng2-materialize'
 import { MzToastModule } from 'ng2-materialize';
+import { MzCollapsibleModule } from 'ng2-materialize'
 import { AppRoutingModule }     from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 
@@ -38,6 +39,7 @@ import { LoginService } from './services/login.service';
    MzSelectModule,
    MzCardModule,
    MzToastModule,
+   MzCollapsibleModule,
    HttpClientModule,
    FormsModule
   ],
