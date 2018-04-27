@@ -153,6 +153,7 @@
         [placeholder]="' '"
         class="formcomponents"
         [(ngModel)]="venta.modelo"
+        (change)="getPrice()"
       >
         <optgroup label="Modelos">
           <option *ngFor="let mode of model"> {{ mode.desc }}</option>
@@ -165,7 +166,7 @@
 <div class="col s12 m6 l6 " style="bottom: 50px;">
   <div class="input-field center  ">
       <i class="material-icons prefix">attach_money</i>
-      <input placeholder="Precio del dispositivo" [(ngModel)]="venta.numFactura" id="icon_prefix" type="text" class="validate">
+      <input placeholder="Precio del dispositivo" [(ngModel)]="venta.precio" id="icon_prefix" type="text" class="validate">
       
     </div>
 </div>
@@ -191,7 +192,7 @@
     <div class="col s12 m6 l6 " style="bottom: 50px;">
       <div class="input-field center  ">
           <i class="material-icons prefix">attach_money</i>
-          <input placeholder="Total" [(ngModel)]="venta.numFactura" id="icon_prefix" type="text" class="validate">
+          <input placeholder="Total" [(ngModel)]="venta.total" id="icon_prefix" type="text" class="validate">
           
         </div>
   </div>

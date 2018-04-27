@@ -37,6 +37,7 @@ export class VentasComponent implements OnInit {
     departamento: '',
     ciudad: '',
     dispositivo: '',
+    precio:'',
     imei: ''
   };
   
@@ -82,7 +83,8 @@ export class VentasComponent implements OnInit {
   getModelP():void {
     for(let arr in this.products) {
       if(this.venta.model === this.products[arr].desc) {
-        this.model = this.products[arr].modelo;
+        this.model =this.products[arr].modelo;
+        //console.log(this.products[]);
       }
     }
   }
@@ -94,6 +96,15 @@ export class VentasComponent implements OnInit {
       }
     }
   }
+  getPrice() {
+    for(let arr in this.model){
+      if(this.venta.marca == this.model[arr].nombre) {
+        console.log(this.model[arr].precio)
+        this.venta.precio = this.model[arr].precio;
+        break;
+      }
+    }
+  }
 
   getProduct():void {
     this.id_vendedor = localStorage.getItem('id_user');
@@ -101,6 +112,7 @@ export class VentasComponent implements OnInit {
       .then(data => {
         //console.log(data);
         this.products = data.map(e => {return e.marca});
+        this.products = Array.from(new Set(this.products));
         this.model = data.map(e => e.modelo);
         this.imei = data;
         //console.log(this.products)
