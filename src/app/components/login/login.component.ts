@@ -88,7 +88,7 @@ export class LoginComponent implements OnInit {
       .then(data => {
         if(data !== 'estas credenciales no coinciden con nuestros registros'){
           localStorage.setItem('id_user',<string>data);
-          this.toast.show('Bienvenid@!',4000,'black');
+          this.toast.show('Bienvenid@!',9000,'black');
           this.router.navigateByUrl('/iniciando');
         }else {
           this.toast.show('Credenciales incorrectas',4000,'black');
@@ -97,7 +97,7 @@ export class LoginComponent implements OnInit {
         
       }).catch(err => {
         //console.log(<string>err);
-        this.toast.show(JSON.stringify(err), 4000, 'black');
+        this.toast.show(JSON.stringify(err), 9000, 'black');
       });
   }
   
