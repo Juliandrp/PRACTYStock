@@ -27,29 +27,34 @@ export class LoginComponent implements OnInit {
     private log:LoginService,
     private router:Router,
     private _locate:LocationService
-  ) { }
+  ) {
+    navigator.geolocation.getCurrentPosition(pos => {
+      console.log(pos.coords);
+    });
+
+   }
 
   ngOnInit() { 
-    /*if(navigator.geolocation) {
-    window.navigator.geolocation.getCurrentPosition(this.success,this.error,this.options);
+   /* if(navigator.geolocation) {
+    window.navigator.geolocation.getCurrentPosition(this.success,this.error);
     }*/
   }
 
   options = {
     enableHighAccuracy: true,
-    timeout: 5000,
+    timeout: 15000,
     maximumAge: 0
   };
 
   success(pos) {
     let crd = pos.coords;
-    this.locacion = pos.coords;
-    /*
+    //this.locacion = pos.coords;
+    
     console.log('Your current position is:');
     console.log('Latitude : ' + crd.latitude);
     console.log('Longitude: ' + crd.longitude);
     console.log('More or less ' + crd.accuracy + ' meters.');
-    */
+    
   };
 
   error(err) {
