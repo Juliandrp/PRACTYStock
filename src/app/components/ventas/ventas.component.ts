@@ -58,7 +58,7 @@ export class VentasComponent implements OnInit {
 
   find():void {
     
-    this._client.findClient(this.cedula)
+    this._client.findClient(this.venta.cedula)
       .then(data => {
         this.client = data;
         if(this.client.length == 1) {
