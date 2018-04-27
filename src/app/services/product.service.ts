@@ -1,22 +1,22 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-
 @Injectable()
-export class LocationService {
+export class ProductService {
   url:string = 'http://192.168.0.200:8000';
+
   constructor(
     private http:HttpClient
   ) { }
 
-  getLocation():Promise<any> {
+  getProducts(id):Promise<any> {
     return new Promise((resolve,reject) => {
-      this.http.get(`${this.url}/api/departamentos`)
+      this.http.get(`${this.url}/api/productos/${id}`)
         .subscribe( data => {
           resolve(data);
-        },err => {
+        },err=> {
           reject(err);
         })
-    });
+    })
   }
 }

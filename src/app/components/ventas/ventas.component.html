@@ -79,7 +79,7 @@
               <div class="row">
                 <div class="input-field col s12">
                   <i class="material-icons prefix">account_circle</i>
-                  <input type="text" id="autocomplete-input" class="autocomplete" [(ngModel)]="venta.cedula">
+                  <input (keyup.enter)="find()" type="text" id="autocomplete-input" class="" [(ngModel)]="cedula">
                   <label for="autocomplete-input">Buscar Cliente</label>
                 </div>
               </div>
@@ -100,7 +100,7 @@
     
       <mz-collapsible-item [active]="false">
           <mz-collapsible-item-header>
-          Cliente no registrado?
+          {{ mensaje }}
           </mz-collapsible-item-header>
           <mz-collapsible-item-body>
            <div class="row">
@@ -115,7 +115,7 @@
               <div class="col s12 m12 l6 center">
                   <div class="input-field center ">
                       <i class="material-icons prefix">person</i>
-                      <input id="icon_prefix" type="text" class="validate" [(ngModel)]="venta.nomCompleto">
+                      <input id="icon_prefix" type="text" class="validate" [(ngModel)]="venta.nomCompleto" >
                       <label for="icon_prefix">Nombre completo</label>
                     </div>
               </div>
@@ -123,7 +123,7 @@
               <div class="col s12 m12 l6 center">
                   <div class="input-field center ">
                       <i class="material-icons prefix">phone</i>
-                      <input id="icon_prefix" type="text" class="validate" [(ngModel)]="venta.telefono">
+                      <input id="icon_prefix" type="text" class="validate" [(ngModel)]="venta.telefono" >
                       <label for="icon_prefix">Telefono</label>
                     </div>
               </div>
@@ -131,7 +131,7 @@
               <div class="col s12 m12 l6 center">
                   <div class="input-field center ">
                       <i class="material-icons prefix">add_location</i>
-                      <input id="icon_prefix" type="text" class="validate" [(ngModel)]="venta.direccion">
+                      <input id="icon_prefix" type="text" class="validate" [(ngModel)]="venta.direccion" [value]="direccion">
                       <label for="icon_prefix">Direccion</label>
                     </div>
               </div>
@@ -154,7 +154,7 @@
                 
                 <mz-select-container>
                     <i class="material-icons prefix" style="left:0%;">shopping_cart</i>
-                    <select mz-select
+                    <select mz-select (change)="getMunicipal()"
                       id="options-select"
                       [label]="'Departamento'"
                       [placeholder]="' '"
@@ -162,7 +162,7 @@
                       [(ngModel)]="venta.departamento"
                       >
                       <optgroup label="Departamentos">
-                        <option ></option>
+                        <option *ngFor="let departamento of locacion">{{ departamento.nombre }}</option>
                       </optgroup>
                     </select>
                     
@@ -180,7 +180,7 @@
                       [(ngModel)]="venta.ciudad"  name="ciudad" 
                     >
                       <optgroup label="Ciudades">
-                        <option ></option>   
+                        <option *ngFor="let municipio of municipios">{{ municipio.nombre }}</option>   
                       </optgroup>
                     </select>
                   </mz-select-container>
@@ -191,15 +191,17 @@
       <mz-select-container>
         <i class="material-icons prefix" style="left:0%;">perm_device_information</i>
           <select mz-select
+           
             id="options-select"
             [label]="'Marca'"
             [placeholder]="' '"
             class="formcomponents"
             [(ngModel)]="venta.marca"
           >
-            <optgroup label="Marcas">
-              <option ></option>
-              
+            <optgroup label="Marcas"  >
+              <option *ngFor="let producto of products">{{ producto.nombre }}
+              </option>
+            
             </optgroup>
           </select>
         </mz-select-container>
@@ -216,7 +218,7 @@
         [(ngModel)]="venta.modelo"
       >
         <optgroup label="Modelos">
-          <option ></option>
+          <option *ngFor="let mode of model"> {{ mode.desc }}</option>
      
         </optgroup>
       </select>
@@ -234,7 +236,7 @@
                   [(ngModel)]="venta.imei"  name="imei" 
                 >
                   <optgroup label="iMEI">
-                    <option ></option>  
+                    <option *ngFor="let im of imei">{{ im.imei }}</option>  
                   </optgroup>
                 </select>
               </mz-select-container>

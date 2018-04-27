@@ -1,3 +1,5 @@
+import { ClientsService } from './services/clients.service';
+import { ProductService } from './services/product.service';
 import { LocationService } from './services/location.service';
 import { VentasService } from './services/ventas.service';
 import { BrowserModule } from '@angular/platform-browser';
@@ -53,7 +55,9 @@ import { IniciandoComponent } from './components/iniciando/iniciando.component';
     MzToastService,
     VentasService,
     LoginService,
-    LocationService
+    LocationService,
+    ProductService,
+    ClientsService
   ],
   bootstrap: [AppComponent]
 })
