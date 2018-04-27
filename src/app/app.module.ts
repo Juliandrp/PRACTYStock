@@ -23,6 +23,8 @@ import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule,HttpClient } from '@angular/common/http';
 import { LoginService } from './services/login.service';
 import { IniciandoComponent } from './components/iniciando/iniciando.component';
+import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 
@@ -33,7 +35,9 @@ import { IniciandoComponent } from './components/iniciando/iniciando.component';
     VentasComponent,
     EquiposComponent,
     HomeComponent,
-    IniciandoComponent
+    IniciandoComponent,
+    SidenavComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
