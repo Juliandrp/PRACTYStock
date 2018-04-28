@@ -1,0 +1,222 @@
+<app-sidenav></app-sidenav>
+
+  <div class="container containerform">
+  <mz-card
+  class="white #960D09-text z-depth-1">
+  <mz-card-title>
+    <h4 class="center">Ventas</h4>
+  </mz-card-title>
+ 
+  <mz-card-content>
+   
+    
+  <div class="row red-text text-darken-4" style="margin-top: 30px; ">
+  
+            <div class="col s12  m6 l6 " style="bottom: 50px;">
+                <div class="input-field center  ">
+                    <i class="material-icons prefix">shopping_cart</i>
+                    <input name="numFactura" placeholder="Numero de factura" [(ngModel)]="venta.numFactura" id="icon_prefix" type="text" class="validate">
+                    
+                  </div>
+            </div>
+
+            <div class="col s12 m6 l6 transparent " style="opacity: 0;" >
+              <div class="input-field center transparent ">
+                  <i class="material-icons prefix transparent">attach_money</i>
+                  <input >
+                  
+                </div>
+          </div>
+
+        
+<div class="col s12 m6 l6">
+    <mz-collapsible
+      [mode]="'expandable'"
+      [onClose]="closeFunctionCallback"
+      [onOpen]="openFunctionCallback">
+
+    
+      <mz-collapsible-item [active]="true">
+          <mz-collapsible-item-header>
+          Cliente
+          </mz-collapsible-item-header>
+          <mz-collapsible-item-body>
+           <div class="row">
+              <div class="col s12 m12 l6 center">
+                  <div class="input-field center ">
+                      <i class="material-icons prefix">perm_identity</i>
+                      <input name="cedula" placeholder="Cedula"  (keyup.enter)="find()" id="icon_prefix" type="text" class="validate" [(ngModel)]="venta.cedula">
+                  
+                    </div>
+              </div>
+    
+              <div class="col s12 m12 l6 center">
+                  <div class="input-field center ">
+                      <i class="material-icons prefix">person</i>
+                      <input name="nombre_completo" placeholder="Nombre completo" id="icon_prefix" type="text" class="validate" [(ngModel)]="venta.nomCompleto" >
+                  
+                    </div>
+              </div>
+    
+              <div class="col s12 m12 l6 center">
+                  <div class="input-field center ">
+                      <i class="material-icons prefix">phone</i>
+                      <input name="telefono" placeholder="Telefono" id="icon_prefix" type="text" class="validate" [(ngModel)]="venta.telefono" >
+                   
+                    </div>
+              </div>
+    
+              <div class="col s12 m12 l6 center">
+                  <div class="input-field center ">
+                      <i class="material-icons prefix">add_location</i>
+                      <input name="direccion" placeholder="Direccion" id="icon_prefix" type="text" class="validate" [(ngModel)]="venta.direccion" [value]="direccion">
+                   
+                    </div>
+              </div>
+    
+              <div class="col s12 m12 l6 center">
+                  <div class="input-field center ">
+                      <i class="material-icons prefix">location_city</i>
+                      <input name="barrio"  placeholder="Barrio" id="icon_prefix" type="text" class="validate" [(ngModel)]="venta.barrio">
+                      
+                    </div>
+              </div>
+            </div>
+          </mz-collapsible-item-body>
+        </mz-collapsible-item>
+    </mz-collapsible>
+    </div> 
+                
+
+            <div class="col s12 m6 l6 center">
+                
+                <mz-select-container>
+                    <i class="material-icons prefix" style="left:0%;">shopping_cart</i>
+                    <select name="departamento" mz-select (change)="getMunicipal()"
+                      id="options-select"
+                      [label]="'Departamento'"
+                      [placeholder]="' '"
+                      class="formcomponents"
+                      [(ngModel)]="venta.departamento"
+                      >
+                      <optgroup label="Departamentos">
+                        <option *ngFor="let departamento of locacion">{{ departamento.nombre }}</option>
+                      </optgroup>
+                    </select>
+                    
+                  </mz-select-container>
+            </div>
+
+            <div class="col s12 m6 l6 center">
+                <mz-select-container>
+                    <i class="material-icons prefix" style="left:0%;">shopping_cart</i>
+                    <select mz-select name="ciudad"
+                      id="options-select"
+                      [label]="'Ciudad'"
+                      [placeholder]="' '"
+                      class="formcomponents"
+                      [(ngModel)]="venta.ciudad"  
+                    >
+                      <optgroup label="Ciudades">
+                        <option *ngFor="let municipio of municipios">{{ municipio.nombre }}</option>   
+                      </optgroup>
+                    </select>
+                  </mz-select-container>
+            </div>
+
+    
+    <div class="col s12 m6 l6 center">
+      <mz-select-container>
+        <i class="material-icons prefix" style="left:0%;">perm_device_information</i>
+          <select mz-select name="marca"
+           
+            id="options-select"
+            [label]="'Marca'"
+            [placeholder]="' '"
+            class="formcomponents"
+            [(ngModel)]="venta.marca"
+          >
+            <optgroup label="Marcas"  >
+              <option *ngFor="let producto of products">{{ producto.nombre }}
+              </option>
+            
+            </optgroup>
+          </select>
+        </mz-select-container>
+</div>
+
+<div class="col s12 m6 l6 center">
+  <mz-select-container>
+    <i class="material-icons prefix" style="left:0%;">perm_device_information</i>
+      <select mz-select nombre="modelo"
+        id="options-select"
+        [label]="'Modelo'"
+        [placeholder]="' '"
+        class="formcomponents"
+        [(ngModel)]="venta.modelo"
+        
+      >
+        <optgroup label="Modelos">
+          <option *ngFor="let mode of model"> {{ mode.desc }}</option>
+     
+        </optgroup>
+      </select>
+    </mz-select-container>
+</div>
+
+<div class="col s12 m6 l6 " style="bottom: 50px;">
+  
+            <mz-select-container>
+              <i class="material-icons prefix" style="left:0%;">attach_money</i>
+                <select mz-select name="precio"
+                  id=""
+          
+                  [placeholder]="' Precio'"
+                  class="formcomponents"
+                  [(ngModel)]="venta.precio"
+                >
+                  <optgroup label="Precios">
+                    <option *ngFor="let precio of precios">{{ precio }}</option>  
+                  </optgroup>
+                </select>
+              </mz-select-container>
+  
+</div>
+
+
+    <div class="col s12 m6 l6 center">
+            <mz-select-container>
+              <i class="material-icons prefix" style="left:0%;">shopping_cart</i>
+                <select mz-select name="imei"
+                  id="options-select"
+                  [label]="'Lista de IMEI'"
+                  [placeholder]="' '"
+                  class="formcomponents"
+                  [(ngModel)]="venta.imei" 
+                >
+                  <optgroup label="iMEI">
+                    <option *ngFor="let im of imei">{{ im.imei }}</option>  
+                  </optgroup>
+                </select>
+              </mz-select-container>
+    </div>
+
+    <div class="col s12 m6 l6 " style="bottom: 50px;">
+      <div class="input-field center  ">
+          <i class="material-icons prefix">attach_money</i>
+          <input name="total" placeholder="Total" [(ngModel)]="venta.precio_factura" id="icon_prefix" type="text" class="validate">
+          
+        </div>
+  </div>
+     
+    </div>
+      
+
+  </mz-card-content>
+  <mz-card-action >
+    <button class="btn waves-effect waves-light btn-large red darken-4 " style="display: block; margin: auto; border-radius: 5px" (click)="postVentas()" type="submit" name="action">Registrar venta
+      <i class="material-icons right">send</i>
+    </button>
+  </mz-card-action>
+</mz-card>
+</div>

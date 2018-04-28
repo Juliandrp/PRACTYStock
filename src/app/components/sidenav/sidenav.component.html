@@ -1,0 +1,54 @@
+<div class="navbar-fixed white">
+  <nav class="white z-depth-1">
+  <div class="nav-wrappergrey">
+ 
+
+  <button [flat]="'true'" mz-button (click)="sidenav.opened = !sidenav.opened" class='show-on-large button-collapse btn ng-tns-c5-2 btn btn-floating waves-effect waves-red darken-4 buttonnav' style="top:0px;" ><i class='material-icons  black-text'>menu</i></button>   
+
+<ul class="center-align">
+  <img style="margin-top: 3px" class="logoadmin" src="../../../assets/images/Practy logo.png">
+</ul>
+
+  </div>
+  </nav>
+  </div>
+  <div class="white z-depth-0 transparent hide-on-med-and-up" >
+  <mz-parallax [height]="320">
+          <img style="background-position: center;" src="../../../assets/images/parallaxsmallscreen.png">
+   </mz-parallax>
+  </div>
+  <div class="white z-depth-0 transparent hide-on-small-only" >
+      <mz-parallax [height]="400">
+              <img style="background-position: center;" src="../../../assets/images/parallax.png">
+       </mz-parallax>
+</div>
+<mz-sidenav #sidenav [id]="'sidenav-demo'">
+  <mz-sidenav-header>
+    <img style="background-position: center;" width="100%" src="../../../assets/images/p logo.png">
+    <div class="row" style="position: absolute; display: inline-block; left: -20px; top: 190px;">
+        <div>
+        <div class="card z-depth-0" style="height: 90px; background: rgba(0, 0, 0, 0.5); border-radius: unset; min-height: 80px; width: 320px;">
+          <div class="card-content white-text" style=" padding-top: 2px; margin: 0px">
+            <p class="white-text center " style="font-size:  bold; ">{{ nombre }}</p>
+            <p class="white-text center" style="font-size: bold; ">{{ email }}</p>
+            
+          </div>
+        </div>
+        </div>
+        </div>
+  </mz-sidenav-header>
+  <mz-sidenav-subheader>Menú</mz-sidenav-subheader>
+  <mz-sidenav-link>
+      <button class="waves-effect waves-red btn-flat" style="width: 100%;" routerLink="/vendedor/home"><i class="material-icons left">home</i> <a class="left  grey-text text-darken-4">Inicio</a> </button>
+    </mz-sidenav-link>
+    <mz-sidenav-divider></mz-sidenav-divider>
+    <mz-sidenav-link>
+      <button class="waves-effect waves-red btn-flat" style="width: 100%;" routerLink="/vendedor/venta"><i class="material-icons left">shop</i> <a class="left grey-text text-darken-4">Ventas</a></button>
+    </mz-sidenav-link>
+  <mz-sidenav-divider></mz-sidenav-divider>
+  
+  <mz-sidenav-link >
+      <button class="waves-effect waves-red btn-flat" style="width: 100%;" routerLink="/"><i class="material-icons left">close</i><a class="left grey-text text-darken-4">Cerrar Sesion</a></button>
+
+  </mz-sidenav-link>
+</mz-sidenav>
