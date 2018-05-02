@@ -13,7 +13,10 @@ import { ProductService } from '../../services/product.service';
   styleUrls: ['./ventas.component.css'],
 })
 export class VentasComponent implements OnInit {
+<<<<<<< HEAD
   precios;
+=======
+>>>>>>> 0527ad93c45485d4c43fc6ea990f419d2bb854db
   client;
   cedula1;
   nombre;
@@ -99,12 +102,21 @@ export class VentasComponent implements OnInit {
   }
   getPrice() {
     for(let arr in this.model){
+<<<<<<< HEAD
       
     
         this.precios += this.model[arr].precio;
   
       }
     
+=======
+      if(this.venta.marca == this.model[arr].nombre) {
+        console.log(this.model[arr].precio)
+        this.venta.precio = this.model[arr].precio;
+        break;
+      }
+    }
+>>>>>>> 0527ad93c45485d4c43fc6ea990f419d2bb854db
   }
 
   getProduct():void {
@@ -116,7 +128,10 @@ export class VentasComponent implements OnInit {
         this.products = Array.from(new Set(this.products));
         this.model = data.map(e => e.modelo);
         this.imei = data;
+<<<<<<< HEAD
         this.precios =this.model.map(e => {return e.precio } )
+=======
+>>>>>>> 0527ad93c45485d4c43fc6ea990f419d2bb854db
         //console.log(this.products)
       }).catch( err => {
         this._toast.show(JSON.stringify(err),4000,'black');
@@ -136,10 +151,22 @@ export class VentasComponent implements OnInit {
 
   postVentas():void {
     this.id_vendedor = localStorage.getItem('id_user');
+<<<<<<< HEAD
     this.service.sold(`num_factura=${this.venta.numFactura}&cedula=${this.venta.cedula}&nombre=${this.venta.nomCompleto}&telefono=${this.venta.telefono}&direccion=${this.venta.direccion}&barrio=${this.venta.barrio}&departamento=${this.venta.departamento}&ciudad=${this.venta.ciudad}&marca=${this.venta.marca}&modelo=${this.venta.modelo}&precio=${this.venta.precio}&precio_factura=${this.venta.precio_factura}&imei=${this.venta.imei}&id_user=${this.id_vendedor}`).
       then(data => {
         this._toast.show('Registro exitoso!',400,'black');
         this.venta = [];
+=======
+    this.service.sold(`
+    numFactura=${this.venta.numFactura}&cedula=${this.venta.cedula}
+    &nomCompleto=${this.venta.nomCompleto}&telefono=${this.venta.telefono}
+    &direccion=${this.venta.direccion}&barrio=${this.venta.barrio}
+    &departamento=${this.venta.departamento}&ciudad=${this.venta.ciudad}
+    &imei=${this.venta.imei}&id_user=${this.id_vendedor}
+    `).
+      then(data => {
+        this._toast.show(<string>data,400,'black');
+>>>>>>> 0527ad93c45485d4c43fc6ea990f419d2bb854db
       }).catch(err => {
         this._toast.show(<string>err,4000,'black');
       });

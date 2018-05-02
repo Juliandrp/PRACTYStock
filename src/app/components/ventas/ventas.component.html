@@ -1,5 +1,8 @@
 <app-sidenav></app-sidenav>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0527ad93c45485d4c43fc6ea990f419d2bb854db
   <div class="container containerform">
   <mz-card
   class="white #960D09-text z-depth-1">
@@ -15,7 +18,11 @@
             <div class="col s12  m6 l6 " style="bottom: 50px;">
                 <div class="input-field center  ">
                     <i class="material-icons prefix">shopping_cart</i>
+<<<<<<< HEAD
                     <input name="numFactura" placeholder="Numero de factura" [(ngModel)]="venta.numFactura" id="icon_prefix" type="text" class="validate">
+=======
+                    <input placeholder="Numero de factura" [(ngModel)]="venta.numFactura" id="icon_prefix" type="text" class="validate">
+>>>>>>> 0527ad93c45485d4c43fc6ea990f419d2bb854db
                     
                   </div>
             </div>
@@ -31,8 +38,14 @@
         
 <div class="col s12 m6 l6">
     <mz-collapsible
+<<<<<<< HEAD
       [mode]="'expandable'">
   
+=======
+      [mode]="'expandable'"
+      [onClose]="closeFunctionCallback"
+      [onOpen]="openFunctionCallback">
+>>>>>>> 0527ad93c45485d4c43fc6ea990f419d2bb854db
 
     
       <mz-collapsible-item [active]="true">
@@ -44,7 +57,11 @@
               <div class="col s12 m12 l6 center">
                   <div class="input-field center ">
                       <i class="material-icons prefix">perm_identity</i>
+<<<<<<< HEAD
                       <input name="cedula" placeholder="Cedula"  (keyup.enter)="find()" id="icon_prefix" type="text" class="validate" [(ngModel)]="venta.cedula">
+=======
+                      <input placeholder="Cedula"  (keyup.enter)="find()" id="icon_prefix" type="text" class="validate" [(ngModel)]="venta.cedula">
+>>>>>>> 0527ad93c45485d4c43fc6ea990f419d2bb854db
                   
                     </div>
               </div>
@@ -52,7 +69,11 @@
               <div class="col s12 m12 l6 center">
                   <div class="input-field center ">
                       <i class="material-icons prefix">person</i>
+<<<<<<< HEAD
                       <input name="nombre_completo" placeholder="Nombre completo" id="icon_prefix" type="text" class="validate" [(ngModel)]="venta.nomCompleto" >
+=======
+                      <input placeholder="Nombre completo" id="icon_prefix" type="text" class="validate" [(ngModel)]="venta.nomCompleto" >
+>>>>>>> 0527ad93c45485d4c43fc6ea990f419d2bb854db
                   
                     </div>
               </div>
@@ -60,7 +81,11 @@
               <div class="col s12 m12 l6 center">
                   <div class="input-field center ">
                       <i class="material-icons prefix">phone</i>
+<<<<<<< HEAD
                       <input name="telefono" placeholder="Telefono" id="icon_prefix" type="text" class="validate" [(ngModel)]="venta.telefono" >
+=======
+                      <input placeholder="Telefono" id="icon_prefix" type="text" class="validate" [(ngModel)]="venta.telefono" >
+>>>>>>> 0527ad93c45485d4c43fc6ea990f419d2bb854db
                    
                     </div>
               </div>
@@ -68,7 +93,11 @@
               <div class="col s12 m12 l6 center">
                   <div class="input-field center ">
                       <i class="material-icons prefix">add_location</i>
+<<<<<<< HEAD
                       <input name="direccion" placeholder="Direccion" id="icon_prefix" type="text" class="validate" [(ngModel)]="venta.direccion" [value]="direccion">
+=======
+                      <input placeholder="Direccion" id="icon_prefix" type="text" class="validate" [(ngModel)]="venta.direccion" [value]="direccion">
+>>>>>>> 0527ad93c45485d4c43fc6ea990f419d2bb854db
                    
                     </div>
               </div>
@@ -76,7 +105,11 @@
               <div class="col s12 m12 l6 center">
                   <div class="input-field center ">
                       <i class="material-icons prefix">location_city</i>
+<<<<<<< HEAD
                       <input name="barrio"  placeholder="Barrio" id="icon_prefix" type="text" class="validate" [(ngModel)]="venta.barrio">
+=======
+                      <input  placeholder="Barrio" id="icon_prefix" type="text" class="validate" [(ngModel)]="venta.barrio">
+>>>>>>> 0527ad93c45485d4c43fc6ea990f419d2bb854db
                       
                     </div>
               </div>
@@ -91,7 +124,11 @@
                 
                 <mz-select-container>
                     <i class="material-icons prefix" style="left:0%;">shopping_cart</i>
+<<<<<<< HEAD
                     <select name="departamento" mz-select (change)="getMunicipal()"
+=======
+                    <select mz-select (change)="getMunicipal()"
+>>>>>>> 0527ad93c45485d4c43fc6ea990f419d2bb854db
                       id="options-select"
                       [label]="'Departamento'"
                       [placeholder]="' '"
@@ -99,7 +136,10 @@
                       [(ngModel)]="venta.departamento"
                       >
                       <optgroup label="Departamentos">
+<<<<<<< HEAD
                         <option></option>
+=======
+>>>>>>> 0527ad93c45485d4c43fc6ea990f419d2bb854db
                         <option *ngFor="let departamento of locacion">{{ departamento.nombre }}</option>
                       </optgroup>
                     </select>
@@ -110,15 +150,25 @@
             <div class="col s12 m6 l6 center">
                 <mz-select-container>
                     <i class="material-icons prefix" style="left:0%;">shopping_cart</i>
+<<<<<<< HEAD
                     <select mz-select name="ciudad"
+=======
+                    <select mz-select
+>>>>>>> 0527ad93c45485d4c43fc6ea990f419d2bb854db
                       id="options-select"
                       [label]="'Ciudad'"
                       [placeholder]="' '"
                       class="formcomponents"
+<<<<<<< HEAD
                       [(ngModel)]="venta.ciudad"  
                     >
                       <optgroup label="Ciudades">
                         <option></option>
+=======
+                      [(ngModel)]="venta.ciudad"  name="ciudad" 
+                    >
+                      <optgroup label="Ciudades">
+>>>>>>> 0527ad93c45485d4c43fc6ea990f419d2bb854db
                         <option *ngFor="let municipio of municipios">{{ municipio.nombre }}</option>   
                       </optgroup>
                     </select>
@@ -129,7 +179,11 @@
     <div class="col s12 m6 l6 center">
       <mz-select-container>
         <i class="material-icons prefix" style="left:0%;">perm_device_information</i>
+<<<<<<< HEAD
           <select mz-select name="marca"
+=======
+          <select mz-select
+>>>>>>> 0527ad93c45485d4c43fc6ea990f419d2bb854db
            
             id="options-select"
             [label]="'Marca'"
@@ -138,7 +192,10 @@
             [(ngModel)]="venta.marca"
           >
             <optgroup label="Marcas"  >
+<<<<<<< HEAD
               <option></option>
+=======
+>>>>>>> 0527ad93c45485d4c43fc6ea990f419d2bb854db
               <option *ngFor="let producto of products">{{ producto.nombre }}
               </option>
             
@@ -150,16 +207,26 @@
 <div class="col s12 m6 l6 center">
   <mz-select-container>
     <i class="material-icons prefix" style="left:0%;">perm_device_information</i>
+<<<<<<< HEAD
       <select mz-select nombre="modelo"
+=======
+      <select mz-select
+>>>>>>> 0527ad93c45485d4c43fc6ea990f419d2bb854db
         id="options-select"
         [label]="'Modelo'"
         [placeholder]="' '"
         class="formcomponents"
         [(ngModel)]="venta.modelo"
+<<<<<<< HEAD
         
       >
         <optgroup label="Modelos">
           <option></option>
+=======
+        (change)="getPrice()"
+      >
+        <optgroup label="Modelos">
+>>>>>>> 0527ad93c45485d4c43fc6ea990f419d2bb854db
           <option *ngFor="let mode of model"> {{ mode.desc }}</option>
      
         </optgroup>
@@ -168,6 +235,7 @@
 </div>
 
 <div class="col s12 m6 l6 " style="bottom: 50px;">
+<<<<<<< HEAD
   
             <mz-select-container>
               <i class="material-icons prefix" style="left:0%;">attach_money</i>
@@ -185,21 +253,38 @@
                 </select>
               </mz-select-container>
   
+=======
+  <div class="input-field center  ">
+      <i class="material-icons prefix">attach_money</i>
+      <input placeholder="Precio del dispositivo" [(ngModel)]="venta.precio" id="icon_prefix" type="text" class="validate">
+      
+    </div>
+>>>>>>> 0527ad93c45485d4c43fc6ea990f419d2bb854db
 </div>
 
 
     <div class="col s12 m6 l6 center">
             <mz-select-container>
               <i class="material-icons prefix" style="left:0%;">shopping_cart</i>
+<<<<<<< HEAD
                 <select mz-select name="imei"
+=======
+                <select mz-select
+>>>>>>> 0527ad93c45485d4c43fc6ea990f419d2bb854db
                   id="options-select"
                   [label]="'Lista de IMEI'"
                   [placeholder]="' '"
                   class="formcomponents"
+<<<<<<< HEAD
                   [(ngModel)]="venta.imei" 
                 >
                   <optgroup label="iMEI">
                     <option></option>
+=======
+                  [(ngModel)]="venta.imei"  name="imei" 
+                >
+                  <optgroup label="iMEI">
+>>>>>>> 0527ad93c45485d4c43fc6ea990f419d2bb854db
                     <option *ngFor="let im of imei">{{ im.imei }}</option>  
                   </optgroup>
                 </select>
@@ -209,7 +294,11 @@
     <div class="col s12 m6 l6 " style="bottom: 50px;">
       <div class="input-field center  ">
           <i class="material-icons prefix">attach_money</i>
+<<<<<<< HEAD
           <input name="total" placeholder="Total" [(ngModel)]="venta.precio_factura" id="icon_prefix" type="text" class="validate">
+=======
+          <input placeholder="Total" [(ngModel)]="venta.total" id="icon_prefix" type="text" class="validate">
+>>>>>>> 0527ad93c45485d4c43fc6ea990f419d2bb854db
           
         </div>
   </div>
@@ -219,9 +308,17 @@
 
   </mz-card-content>
   <mz-card-action >
+<<<<<<< HEAD
     <button class="btn waves-effect waves-light btn-large red darken-4 " style="display: block; margin: auto; border-radius: 5px" (click)="postVentas()" type="submit" name="action">Registrar venta
+=======
+    <button class="btn waves-effect waves-light btn-large red darken-4 " style="display: block; margin: auto; border-radius: 5px" type="submit" name="action">Registrar venta
+>>>>>>> 0527ad93c45485d4c43fc6ea990f419d2bb854db
       <i class="material-icons right">send</i>
     </button>
   </mz-card-action>
 </mz-card>
+<<<<<<< HEAD
 </div>
+=======
+</div>
+>>>>>>> 0527ad93c45485d4c43fc6ea990f419d2bb854db

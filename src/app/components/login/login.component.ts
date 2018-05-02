@@ -16,8 +16,11 @@ export class LoginComponent implements OnInit {
   @Input() cedula:string = '';
   @Input() password:string = '';
   location
+<<<<<<< HEAD
   latitud;
   longitud;
+=======
+>>>>>>> 0527ad93c45485d4c43fc6ea990f419d2bb854db
   _token:string;
   user = {
     login:'',
@@ -30,6 +33,7 @@ export class LoginComponent implements OnInit {
     private router:Router,
     private _locate:LocationService
   ) {
+<<<<<<< HEAD
     localStorage.setItem('url','http://192.168.43.44:8000');
     navigator.geolocation.getCurrentPosition(pos => {
       console.log(pos.coords);
@@ -39,6 +43,10 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('lng',this.longitud);
       
 
+=======
+    navigator.geolocation.getCurrentPosition(pos => {
+      console.log(pos.coords);
+>>>>>>> 0527ad93c45485d4c43fc6ea990f419d2bb854db
     });
 
    }
@@ -101,10 +109,14 @@ export class LoginComponent implements OnInit {
     this.log.login(`login=${this.user.login}&password=${this.user.password}`)
       .then(data => {
         if(data !== 'estas credenciales no coinciden con nuestros registros'){
+<<<<<<< HEAD
           console.log(data)
           localStorage.setItem('id_user',data[0].id);
           localStorage.setItem('nombre_user',data[0].nombre_completo);
           localStorage.setItem('email_user',data[0].email);
+=======
+          localStorage.setItem('id_user',JSON.stringify(data));
+>>>>>>> 0527ad93c45485d4c43fc6ea990f419d2bb854db
           //localStorage.setItem('name_user',data);
           this.toast.show('Bienvenid@!',9000,'black');
           this.router.navigateByUrl('/iniciando');
@@ -115,7 +127,11 @@ export class LoginComponent implements OnInit {
         
       }).catch(err => {
         //console.log(<string>err);
+<<<<<<< HEAD
         this.toast.show('Credenciales incorrectas!', 9000, 'black');
+=======
+        this.toast.show(JSON.stringify(err), 9000, 'black');
+>>>>>>> 0527ad93c45485d4c43fc6ea990f419d2bb854db
       });
   }
   

@@ -3,7 +3,11 @@ import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class VentasService {
+<<<<<<< HEAD
   url:string = localStorage.getItem('url');
+=======
+  url:string = 'http://192.168.0.200:8000';
+>>>>>>> 0527ad93c45485d4c43fc6ea990f419d2bb854db
 
   constructor(
     private http:HttpClient
