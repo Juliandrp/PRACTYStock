@@ -3,7 +3,8 @@ import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class ClientsService {
-  url:string = 'http://localhost:8000'
+  
+  url:string = localStorage.getItem('url');
 
   constructor(
     private http:HttpClient

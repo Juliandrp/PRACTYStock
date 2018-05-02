@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class LoginService {
-  url:string = 'http://localhost:8000'
+  url:string = localStorage.getItem('url');
   constructor(
     private http:HttpClient
   ) { }

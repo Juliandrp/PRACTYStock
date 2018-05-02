@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class ProductService {
-  url:string = 'http://localhost:8000'
+  url:string = localStorage.getItem('url');
 
   constructor(
     private http:HttpClient

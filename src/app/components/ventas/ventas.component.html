@@ -31,9 +31,8 @@
         
 <div class="col s12 m6 l6">
     <mz-collapsible
-      [mode]="'expandable'"
-      [onClose]="closeFunctionCallback"
-      [onOpen]="openFunctionCallback">
+      [mode]="'expandable'">
+  
 
     
       <mz-collapsible-item [active]="true">
@@ -100,6 +99,7 @@
                       [(ngModel)]="venta.departamento"
                       >
                       <optgroup label="Departamentos">
+                        <option></option>
                         <option *ngFor="let departamento of locacion">{{ departamento.nombre }}</option>
                       </optgroup>
                     </select>
@@ -118,6 +118,7 @@
                       [(ngModel)]="venta.ciudad"  
                     >
                       <optgroup label="Ciudades">
+                        <option></option>
                         <option *ngFor="let municipio of municipios">{{ municipio.nombre }}</option>   
                       </optgroup>
                     </select>
@@ -137,6 +138,7 @@
             [(ngModel)]="venta.marca"
           >
             <optgroup label="Marcas"  >
+              <option></option>
               <option *ngFor="let producto of products">{{ producto.nombre }}
               </option>
             
@@ -157,6 +159,7 @@
         
       >
         <optgroup label="Modelos">
+          <option></option>
           <option *ngFor="let mode of model"> {{ mode.desc }}</option>
      
         </optgroup>
@@ -176,6 +179,7 @@
                   [(ngModel)]="venta.precio"
                 >
                   <optgroup label="Precios">
+                    <option></option>
                     <option *ngFor="let precio of precios">{{ precio }}</option>  
                   </optgroup>
                 </select>
@@ -195,6 +199,7 @@
                   [(ngModel)]="venta.imei" 
                 >
                   <optgroup label="iMEI">
+                    <option></option>
                     <option *ngFor="let im of imei">{{ im.imei }}</option>  
                   </optgroup>
                 </select>

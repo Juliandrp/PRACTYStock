@@ -16,6 +16,8 @@ export class LoginComponent implements OnInit {
   @Input() cedula:string = '';
   @Input() password:string = '';
   location
+  latitud;
+  longitud;
   _token:string;
   user = {
     login:'',
@@ -28,8 +30,15 @@ export class LoginComponent implements OnInit {
     private router:Router,
     private _locate:LocationService
   ) {
+    localStorage.setItem('url','http://192.168.43.44:8000');
     navigator.geolocation.getCurrentPosition(pos => {
       console.log(pos.coords);
+      this.latitud = parseFloat(pos.coords.latitude.toFixed(4)) ;
+      this.longitud = parseFloat(pos.coords.longitude.toFixed(4)) ;
+      localStorage.setItem('lat',this.latitud);
+      localStorage.setItem('lng',this.longitud);
+      
+
     });
 
    }
@@ -106,7 +115,7 @@ export class LoginComponent implements OnInit {
         
       }).catch(err => {
         //console.log(<string>err);
-        this.toast.show('error', 9000, 'black');
+        this.toast.show('Credenciales incorrectas!', 9000, 'black');
       });
   }
   

@@ -138,7 +138,8 @@ export class VentasComponent implements OnInit {
     this.id_vendedor = localStorage.getItem('id_user');
     this.service.sold(`num_factura=${this.venta.numFactura}&cedula=${this.venta.cedula}&nombre=${this.venta.nomCompleto}&telefono=${this.venta.telefono}&direccion=${this.venta.direccion}&barrio=${this.venta.barrio}&departamento=${this.venta.departamento}&ciudad=${this.venta.ciudad}&marca=${this.venta.marca}&modelo=${this.venta.modelo}&precio=${this.venta.precio}&precio_factura=${this.venta.precio_factura}&imei=${this.venta.imei}&id_user=${this.id_vendedor}`).
       then(data => {
-        this._toast.show(<string>data,400,'black');
+        this._toast.show('Registro exitoso!',400,'black');
+        this.venta = [];
       }).catch(err => {
         this._toast.show(<string>err,4000,'black');
       });

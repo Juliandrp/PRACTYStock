@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidenavComponent implements OnInit {
   nombre:string;
+  latitud;
+  longitud;
   ubicacion:string;
   email:string;
   constructor(
@@ -16,6 +18,8 @@ export class SidenavComponent implements OnInit {
   ngOnInit() {
   	this.nombre = localStorage.getItem('nombre_user');
   	this.email = localStorage.getItem('email_user');
+    this.latitud = localStorage.getItem('lat');
+    this.longitud = localStorage.getItem('lng');
   }
 
 }
